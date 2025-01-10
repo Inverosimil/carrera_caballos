@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego de Carreras de Caballos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <h1>Juego de Carreras de Caballos</h1>
+
+  <!-- Controles principales -->
+  <div id="controls">
+    <button id="btn-agregar-participante">Agregar Nombre</button>
+    <button id="btn-reiniciar">Reiniciar</button>
+  </div>
+
+  <!-- Tabla de apuestas -->
+  <table id="tabla-participantes">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Oro</th>
+        <th>Espada</th>
+        <th>Basto</th>
+        <th>Copa</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Sección para seleccionar el caballo ganador -->
+  <div class="ganador-section" id="seleccion-ganador" style="display: none;">
+    <h2>Escoger el caballo ganador</h2>
+    <div class="ganador-buttons">
+      <button class="btn-ganador" onclick="seleccionarGanador('Oro')">Oro</button>
+      <button class="btn-ganador" onclick="seleccionarGanador('Espada')">Espada</button>
+      <button class="btn-ganador" onclick="seleccionarGanador('Basto')">Basto</button>
+      <button class="btn-ganador" onclick="seleccionarGanador('Copa')">Copa</button>
+    </div>
+    <div id="resultados-ganadores" style="margin-top: 20px;"></div>
+    <!-- Botón finalizar ronda centrado y con margen -->
+    <!-- Antes:
+    <div style="text-align: center; margin-top: 20px;">
+      <button id="btn-finalizar-ronda" onclick="finalizarRonda()">Finalizar Ronda</button>
+    </div>
+    -->
+
+    <!-- Ahora: -->
+    <div class="btn-finalizar-container">
+      <button id="btn-finalizar-ronda" onclick="finalizarRonda()">Finalizar Ronda</button>
+    </div>
+  </div>
+
+  <!-- Sección de Historial y Estadísticas -->
+  <div id="tabs">
+    <button id="btn-ver-historial" class="tab-button">Ver Historial</button>
+    <button id="btn-ver-estadisticas" class="tab-button">Ver Estadísticas</button>
+  </div>
+
+  <!-- Historial de partidas -->
+  <div id="historial" class="tab-content">
+    <h3>Historial de Partidas</h3>
+    <div id="historial-contenido"></div>
+  </div>
+
+  <!-- Estadísticas -->
+  <div id="estadisticas" class="tab-content" style="display: none;">
+    <h3>Estadísticas Generales</h3>
+    <div id="estadisticas-contenido"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
